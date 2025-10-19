@@ -10,9 +10,9 @@ class products(models.Model):
     quantity = models.CharField(max_length=20)
     cost = models.DecimalField(max_digits=6, decimal_places=2, max_length=8)
     '''date_purchased=models.DecimalField(max_digits=6, decimal_places=2, max_length=8)'''
-    prod_image = models.ImageField(upload_to='images')
+    prod_image = models.ImageField(upload_to='images/')
     def __str__(self):
-        return f'{self.name},{self.product_type}, {self.product_id}, {self.quantity},{self.quantity}, {self.prod_image}'
+        return f'{self.name},{self.product_description}, {self.product_id}, {self.quantity},{self.cost}, {self.prod_image}'
 
     class Meta:
         verbose_name_plural = 'Products'
