@@ -1,13 +1,15 @@
-from django.shortcuts import render,redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import products
 from .forms import products
 from .forms import ProductForm
 
+
 # Create your views here.
 def index(request):
-    myprod=products.objects.all().order_by('name')
-    context={'myprod':myprod}
-    return render(request, 'index.html', context )
+    myprod = products.objects.all().order_by('name')
+    context = {'myprod': myprod}
+    return render(request, 'index.html', context)
+
 
 # Adding a new product from the controls
 def add_product(request):
@@ -19,6 +21,7 @@ def add_product(request):
     else:
         form = ProductForm()
     return render(request, 'add_product.html', {'form': form})
+
 
 # Delete products
 def delete(request, pk):
