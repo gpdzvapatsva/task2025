@@ -1,1 +1,1 @@
-This app is shows development of a Django webapp
+This app is shows development of a Django webapp.
