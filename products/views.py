@@ -4,7 +4,7 @@ from .forms import products
 from .forms import ProductForm
 
 
-# Create your views here.
+# Create your views here. Directs to homepage
 def index(request):
     myprod = products.objects.all().order_by('name')
     context = {'myprod': myprod}
