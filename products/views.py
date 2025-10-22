@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from .models import products
 from .forms import products
 from .forms import ProductForm
@@ -30,3 +30,6 @@ def delete(request, pk):
         product.delete()
         return redirect('index')  # we can use httpresponse to display message
     return render(request, 'delete.html', {'product': product})
+
+def metrics(request):
+    return HttpResponse("Metrics data or dashboard goes here.")

@@ -38,7 +38,7 @@
     <h1>Add a New Product</h1>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_table }}
         <button type="submit">Save Product</button>
     </form>
 </body>
